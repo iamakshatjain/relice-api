@@ -4,7 +4,8 @@ const router = express.Router();
 const Reports = require("../models/report");
 
 router.post("/post/report", (req, res) => {
-    var data = req.query;
+    var data = req.body;
+    console.log(data);
 
     Reports.create({
         image: data.image,

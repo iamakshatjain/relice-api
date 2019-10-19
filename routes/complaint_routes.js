@@ -38,7 +38,7 @@ router.post("/post/complaints", async (req, res) => {
             return;
         }
 
-        //todo : take url from natani
+
         const response = await axios.get({
             url: "https://reliceai.azurewebsites.net",
             params : {

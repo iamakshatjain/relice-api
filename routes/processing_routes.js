@@ -32,7 +32,7 @@ router.get("/get/complaints", (req, res) => {
 
 //to put all the matched results
 router.post("/post/matched",(req,res) => {
-    const {complaint_id, report_id, victim_name} = req.query;
+    const {complaint_id, report_id, victim_name} = req.body;
 
     //todo : check if the same match doesn't exist
     Matched.create({
