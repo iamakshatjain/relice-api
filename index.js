@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(cors());
 dotenv.config();
 // console.log(process.env.DATABASEURL);
-const url = "mongodb://relice:CGJL5AbQbU7L48fXOiR0tD5KxJDVl5V3WqBDSpMp8V5jvP9Hma45jGtpO8qPmd9ACMEZx13zBbZUSGCssZhCjQ==@relice.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@relice@";
+// const url = "mongodb://relice:CGJL5AbQbU7L48fXOiR0tD5KxJDVl5V3WqBDSpMp8V5jvP9Hma45jGtpO8qPmd9ACMEZx13zBbZUSGCssZhCjQ==@relice.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@relice@";
 const url1 = "mongodb://relice:CGJL5AbQbU7L48fXOiR0tD5KxJDVl5V3WqBDSpMp8V5jvP9Hma45jGtpO8qPmd9ACMEZx13zBbZUSGCssZhCjQ==@relice.mongo.cosmos.azure.com:10255/relice-2019?ssl=true"
 mongoose.connect(url1, {useNewUrlParser: true});
 app.set("view engine", "ejs");

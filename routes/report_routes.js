@@ -5,6 +5,9 @@ const Reports = require("../models/report");
 
 router.post("/post/report", (req, res) => {
     var data = req.query;
+    console.log(data);
+    console.log(data.image);
+    console.log(typeof(data.image));
     //todo : upload the image here
     const image_url = "some url";
     Reports.create({
