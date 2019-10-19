@@ -8,7 +8,7 @@ router.get("/get/complaints", (req,res) => {
     Complaints.find({}, (err, complaints) => {
         if(err){
             console.log(err);
-            res.send({});
+            res.send({error : err});
             return;
         }
         res.send(complaints);
@@ -17,13 +17,10 @@ router.get("/get/complaints", (req,res) => {
 
 router.post("/post/complaints", async (req, res) => {
     let data = req.query;
-    // todo : upload the image first and then generate the url
-    const image_url = "";
-    console.log(data);
 
     Complaints.create({
-        image : image_url,
-        face_id : "",
+        image : data.image,
+        face_id : "", //from natani
         victim_name: data.victim_name,
         age: data.age,
         location: data.location,
@@ -37,7 +34,7 @@ router.post("/post/complaints", async (req, res) => {
         if (err) {
             console.log(err);
             //make sourabh wait for reply from api
-            res.send(-1);
+            res.send({ error: err });
             return;
         }
 

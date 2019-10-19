@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 var complaintSchema = new mongoose.Schema({
     face_id : String,
+    image : String,
     victim_name : String,
     age: Number,
     location: String,

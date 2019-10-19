@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 var reportSchema = new mongoose.Schema({
+    face_id : String,
     image : String,
     age: Number,
     location: String,
