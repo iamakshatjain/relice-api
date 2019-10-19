@@ -12,7 +12,8 @@ app.use(cors());
 dotenv.config();
 // console.log(process.env.DATABASEURL);
 const url = "mongodb://relice:CGJL5AbQbU7L48fXOiR0tD5KxJDVl5V3WqBDSpMp8V5jvP9Hma45jGtpO8qPmd9ACMEZx13zBbZUSGCssZhCjQ==@relice.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@relice@";
-mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true });
+const url1 = "mongodb://relice:CGJL5AbQbU7L48fXOiR0tD5KxJDVl5V3WqBDSpMp8V5jvP9Hma45jGtpO8qPmd9ACMEZx13zBbZUSGCssZhCjQ==@relice.mongo.cosmos.azure.com:10255/relice-2019?ssl=true"
+mongoose.connect(url1, {useNewUrlParser: true});
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "public"));
 
