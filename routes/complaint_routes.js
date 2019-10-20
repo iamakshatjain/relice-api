@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const axios = require("axios");
 
 const Complaints = require("../models/complaint");
 
@@ -38,15 +39,16 @@ router.post("/post/complaints", async (req, res) => {
             return;
         }
 
-
-        const response = await axios.get({
-            url: "https://reliceai.azurewebsites.net",
+            const response = await axios.get("https://reliceai.azurewebsites.net/getId",{
             params : {
-                dbItemId: image_url
+                dbItemId: data.image
             }
         });
 
+        // console.log("response : ", response);
         complaint.face_id = response.face_id;
+        console.log(complaint);
+
         await complaint.save();
         res.send({
             complaint_id : complaint._id,
