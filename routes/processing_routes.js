@@ -34,7 +34,6 @@ router.get("/get/complaints", (req, res) => {
 router.post("/post/matched",(req,res) => {
     const {complaint_id, report_id, victim_name} = req.body;
 
-    //todo : check if the same match doesn't exist
     Matched.create({
         complaint_id : complaint_id,
         report_id : report_id,

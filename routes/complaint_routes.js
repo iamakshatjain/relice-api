@@ -46,13 +46,21 @@ router.post("/post/complaints", async (req, res) => {
         });
 
         // console.log("response : ", response);
-        complaint.face_id = response.face_id;
-        console.log(complaint);
+        complaint.face_id = response.data.face_id;
+        console.log("response : ", response.data);
+        // console.log("complaint : ", complaint);
+        var matched_id = response.data.matched_id;
+        var is_matched = true;
+        if(matched_id == "" || matched_id ==undefined)
+            is_matched = false;
 
         await complaint.save();
+        // console.log(complaint);
         res.send({
-            complaint_id : complaint._id,
-            matched_id : response.matched_id
+            complaint_id : complaint.face_id,
+            matched_id : matched_id,
+            is_matched : is_matched
+            
         });
     });
 });
