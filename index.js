@@ -30,7 +30,7 @@ app.use("/api", complaintRoutes);
 app.use("/api",processingRoutes);
 app.use("/api",reportRoutes);
 
-app.listen(process.env.PORT || 3000, process.env.IP, () => {
+app.listen(process.env.PORT || 3001, process.env.IP, () => {
     console.log("I am at your service sir...");
 });
 

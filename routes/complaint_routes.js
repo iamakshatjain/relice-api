@@ -3,6 +3,7 @@ const router = express.Router();
 const axios = require("axios");
 
 const Complaints = require("../models/complaint");
+const Matched = require("../models/matched");
 
 router.get("/get/complaints", (req,res) => {
     const data = req.body;
@@ -63,6 +64,18 @@ router.post("/post/complaints", async (req, res) => {
             
         });
     });
+});
+
+router.get("/get/matched", async(req, res) => {
+    const data = req.body;
+    Matched.find({}, (err, matches) => {
+        if (err) {
+            console.log(err);
+            res.send({ error: err });
+            return;
+        }
+        res.send(matches);
+    }); 
 });
 
 module.exports = router;
